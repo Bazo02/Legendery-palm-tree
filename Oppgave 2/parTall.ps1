@@ -7,7 +7,10 @@ $nummer = Get-Content $jsonPath | ConvertFrom-Json # Her leses innholdet i JSON-
 #For å filtrere bort har jeg brukt metoden forklart her http://xahlee.info/powershell/powershell_filter_array.html 
 
 # Filtrerer ut oddetall 
-$parTall = $nummer | Where-Object { $_ % 2 -eq 0 }  # Her blir
+$parTall = $nummer | Where-Object { $_ % 2 -eq 0 } 
+# Partallene blir summert
+$sumParTall = ($parTall | Measure-Object -Sum).Sum 
 
-# Skriver ut listen med partall
-Write-Output $parTall
+# Partall og sum av disse blir skrevet ut her
+Write-Host "Partall: $parTall"
+Write-Host "Sum av partall: $sumParTall"
