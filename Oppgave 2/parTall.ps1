@@ -14,3 +14,4 @@ $sumParTall = ($parTall | Measure-Object -Sum).Sum
 # Partall og sum av disse blir skrevet ut her
 Write-Host "Partall: $parTall"
 Write-Host "Sum av partall: $sumParTall"
+
